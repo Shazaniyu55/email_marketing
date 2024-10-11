@@ -72,6 +72,8 @@ const applyJob = async (req, res) => {
           readFileAsync('./assets/images/twitter.png'),
           readFileAsync('./assets/images/ig.png'),
           readFileAsync('./assets/images/face.png'),
+          readFileAsync('./assets/images/adain1.png'),
+
       ]);
 
       // Create attachments array
@@ -106,6 +108,14 @@ const applyJob = async (req, res) => {
           encoding: 'base64',
           cid: 'uniqueImageCID5', // Referenced in the HTML template
       },
+
+      {
+        filename: 'adain1.png',
+        content: imageAttachments[3],
+        encoding: 'base64',
+        cid: 'uniqueImageCID6', // Referenced in the HTML template
+    },
+      
       ];
 
       // Create email content
