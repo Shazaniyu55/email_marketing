@@ -18,46 +18,6 @@ const transporter = nodemailer.createTransport({
   });
 
 
-// const applyJob = async (req, res) => {
-
-
-//     try {
-      
-//         const {email}  = req.body;
-//         console.log(email)
-
-//         const htmlTemplate = await readFileAsync('./views/index.ejs', 'utf-8');
-//         const imageAttachment = await readFileAsync('./assets/images/bag.png');
-      
-//       // Create email content
-//       const mailOptions = {
-//         from: process.env.EMAIL_USER,
-//         to: `${email}`, // Admin email
-//         subject: 'Elevate Your Business with Our Innovative IT Solutions',
-//         html: htmlTemplate,
-//         attachments: [{
-//             filename: 'adain.webp',
-//             content: imageAttachment,
-//             encoding: 'base64',
-//             cid: 'uniqueImageCID', // Referenced in the HTML template
-//         }],
-        
-        
-//       };
-  
-      
-    
-//       // Send email
-//       await transporter.sendMail(mailOptions);
-    
-//       // Respond to client
-//       res.status(200).json({ status: 'success', message: 'Application submitted successfully.' });
-    
-//     } catch (error) {
-//       console.error('Error processing application:', error);
-//       res.status(500).send('Internal Server Error');
-//     }
-//   };
 const applyJob = async (req, res) => {
   try {
       const { email } = req.body;
@@ -73,6 +33,7 @@ const applyJob = async (req, res) => {
           readFileAsync('./assets/images/ig.png'),
           readFileAsync('./assets/images/face.png'),
           readFileAsync('./assets/images/adain1.png'),
+          readFileAsync('./assets/images/banner1.png'),
 
       ]);
 
@@ -114,6 +75,13 @@ const applyJob = async (req, res) => {
         content: imageAttachments[3],
         encoding: 'base64',
         cid: 'uniqueImageCID6', // Referenced in the HTML template
+    },
+
+    {
+        filename: 'banner1.png',
+        content: imageAttachments[4],
+        encoding: 'base64',
+        cid: 'uniqueImageCID7', // Referenced in the HTML template
     },
       
       ];
